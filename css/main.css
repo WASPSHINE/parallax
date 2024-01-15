@@ -23,7 +23,7 @@ body {
 }
 .magic-list__item {
     /*cursor: none;*/
-    color: var(--index);
+    color: var(--black);
     text-decoration: none;
     display: block;
     line-height: .9;
@@ -37,14 +37,6 @@ body {
 .magic-list__header {
     width: min-content;
     will-change: transform;
-
-}
-
-.magic-list__header {
-    width: min-content;
-}
-
-.magic-list__header {
 }
 
 .magic-list__header {
@@ -57,7 +49,7 @@ body {
     content: '(0' counter(my-counter) ')';
     position: absolute;
     font-style: calc(var(--index) * .95);
-    margin-left: calc(var(--index) * -2.25);
+    margin-left: calc(var(--index) * -3);
     margin-top: calc(var(--index) / 2);
     letter-spacing: .5px;
     transition: transform var(--transition);
@@ -76,5 +68,4 @@ body {
     height: 0;
     top: calc(var(--height) * -.5);
     left: calc(var(--width) * -.5);
-
 }
