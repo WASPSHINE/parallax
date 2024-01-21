@@ -15,8 +15,9 @@ body{
     background-color: #f0f0f0;
 }
 .magic__list {
-    font-family: arsenal_f, SansSerif;
-    font-style: calc(var(--index) * 2,75);
+    font-family: arsenal_f, sans-serif;
+    font-size: calc(var(--index) * 2,75);
+    padding: calc(var(--index) * 2,75);;
 }
 .magic-list__item {
     /*cursor: none;*/
@@ -35,9 +36,7 @@ body{
 }
 .magic-list__item::before {
     content: '(0' counter(my-counter) ')';
+    position: absolute;
+    font-size: calc(var(--index) * .95);
+    margin-left: calc(var(--index) * -2.75);
 }
-
-/*.cursor {*/
-/*    --width: calc(var(--index) * 22);*/
-/*    --height: calc(var(--index) * 14);*/
-/*}*/
