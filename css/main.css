@@ -7,6 +7,7 @@
     --black: #141414;
     --index: calc(1vw + 1vh);
     --transition: 1.25s cubic-bezier(.2, .5, 0, 1);
+    --transition-cursor: 2s cubic-bezier(.05, .5, 0, 1);
 }
 @font-face {
     font-family: arsenal_f;
@@ -21,7 +22,7 @@ body{
     padding: calc(var(--index) * 2,75);;
 }
 .magic-list__item {
-    /*cursor: none;*/
+    cursor: none;
     color: var(--black);
     text-decoration: none;
     display: block;
@@ -30,10 +31,15 @@ body{
     border-bottom: 1px solid rgb(0 0 0 / .09);
     counter-increment: my-counter;
 }
+
+.magic-list__item:first-child {
+    border-top: 1.5px solid var(--black);
+}
+
 .magic-list__header {
     width: min-content;
     transition: transform var(--transition);
-    /*will-change: transform;*/
+    will-change: transform;
 }
 .magic-list__item::before {
     content: '(0' counter(my-counter) ')';
@@ -42,6 +48,8 @@ body{
     margin-left: calc(var(--index) * -2.25);
     letter-spacing: .5px;
     transition: transform var(--transition);
+    transition-delay: .025s;
+    will-change: transform;
 }
 .magic-list__item:hover .magic-list__header,
 .magic-list__item:hover::before {
