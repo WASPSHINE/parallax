@@ -6,6 +6,7 @@
 :root {
     --black: #141414;
     --index: calc(1vw + 1vh);
+    --transition: 1.25s cubic-bezier(.2, .5, 0, 1);
 }
 @font-face {
     font-family: arsenal_f;
@@ -31,12 +32,18 @@ body{
 }
 .magic-list__header {
     width: min-content;
-    /*transition: transform var(--transition);*/
+    transition: transform var(--transition);
     /*will-change: transform;*/
 }
 .magic-list__item::before {
     content: '(0' counter(my-counter) ')';
     position: absolute;
     font-size: calc(var(--index) * .95);
-    margin-left: calc(var(--index) * -2.75);
+    margin-left: calc(var(--index) * -2.25);
+    letter-spacing: .5px;
+    transition: transform var(--transition);
+}
+.magic-list__item:hover .magic-list__header,
+.magic-list__item:hover::before {
+    transform: translate3d(calc(var(--index) * -5), 0, 0);
 }
